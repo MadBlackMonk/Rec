@@ -1,6 +1,41 @@
-{% extends 'base_1.html' %}
-
+{% extends 'base_home.html' %}
 
 {% block content %}
+<br>
+<div class="shadow p-3 mb-5 bg-body-tertiary rounded">
+<h1 style="color: teal;"> Sign Up </h1>
+<br>
+
+<form method="POST">
+    {{form.hidden_tag()}}
+
+    {{form.fname.label(class="form-label")}}
+    {{form.fname(class="form-control")}}
+
+    {{form.lname.label(class="form-label")}}
+    {{form.lname(class="form-control")}}
+
+    {{form.uname.label(class="form-label")}}
+    {{form.uname(class="form-control")}}
+
+    {{form.email.label(class="form-label")}}
+    {{form.email(class="form-control")}}
+
+    {{form.pass_hash.label(class="form-label")}}
+    {{form.pass_hash(class="form-control")}}
+
+    {{form.pass_hash2.label(class="form-label")}}
+    {{form.pass_hash2(class="form-control")}}
+    <br>
+
+    {{form.submit(class="btn btn-primary")}}
+
+</form>
+</div>
+<br><br><br>
+
+{% for record_user in record_users %}
+    {{ record_user.id }}. {{ record_user.fname }}-{{ record_user.lname }}-{{ record_user.uname }}-{{ record_user.email }}-{{ record_user.pass_hash }}<br>
+{% endfor %}
 
 {% endblock %}

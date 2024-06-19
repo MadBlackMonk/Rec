@@ -1,6 +1,24 @@
-{% extends 'base_1.html' %}
-
+{% extends 'base_home.html' %}
 
 {% block content %}
+<br>
+<div class="shadow p-3 mb-5 bg-body-tertiary rounded">
+<h1 style="color: teal;"> Sign In </h1>
+<br>
 
+<form method="POST">
+    {{form.hidden_tag()}}
+
+    {{form.email.label(class="form-label")}}
+    {{form.email(class="form-control")}}
+
+    {{form.password.label(class="form-label")}}
+    {{form.password(class="form-control")}}
+    <br>
+
+    {{form.submit(class="btn btn-primary")}}
+
+</form>
+</div>
+<br><br><br>
 {% endblock %}
